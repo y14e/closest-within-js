@@ -1,7 +1,7 @@
 /**
  * closest-within.ts
  *
- * @version 1.0.6
+ * @version 1.0.7
  * @author Yusuke Kamiyamane
  * @license MIT
  * @copyright Copyright (c) Yusuke Kamiyamane
@@ -35,7 +35,7 @@ export function closestWithin(
   }
 
   if (element !== scope && !scope.contains(element)) {
-    console.warn('Mismatch elements');
+    console.warn('Element not within scope');
     return null;
   }
 
