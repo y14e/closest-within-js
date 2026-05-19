@@ -35,7 +35,7 @@ export function closestWithin(
   }
 
   if (element !== scope && !scope.contains(element)) {
-    console.warn('Element not within scope');
+    console.warn('Mismatch elements');
     return null;
   }
 
