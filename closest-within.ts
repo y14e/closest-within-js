@@ -1,7 +1,7 @@
 /**
  * closest-within.ts
  *
- * @version 1.0.9
+ * @version 1.0.10
  * @author Yusuke Kamiyamane
  * @license MIT
  * @copyright Copyright (c) Yusuke Kamiyamane
@@ -22,7 +22,7 @@ export function closestWithin(
     return null;
   }
 
-  if (typeof selector !== 'string') {
+  if (typeof selector !== 'string' || !selector.trim()) {
     console.warn('Invalid selector');
     return null;
   }
