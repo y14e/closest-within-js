@@ -1,7 +1,9 @@
 # closest-within.ts
+
 TS snippet for the `closest()` method within the scope.
 
 ## Usage
+
 ```ts
 import { closestWithin } from './closest-within';
 
