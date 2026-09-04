@@ -1,7 +1,7 @@
 /**
  * closest-within.ts
  *
- * @version 1.0.11
+ * @version 1.0.12
  * @author Yusuke Kamiyamane
  * @license MIT
  * @copyright Copyright (c) Yusuke Kamiyamane
@@ -22,6 +22,11 @@ export function closestWithin(
     return null;
   }
 
+  if (typeof selector !== 'string' || !selector.trim()) {
+    console.warn('Invalid selector');
+    return null;
+  }
+
   if (!(scope instanceof Element)) {
     console.warn(
       `Invalid scope element. Fallback: <${document.documentElement.tagName.toLowerCase()}> element.`,
@@ -29,11 +34,9 @@ export function closestWithin(
     scope = document.documentElement;
   }
 
-  if (
-    typeof selector !== 'string' ||
-    !selector.trim() ||
-    !scope.querySelector(selector)
-  ) {
+  try {
+    scope.querySelector(selector);
+  } catch {
     console.warn('Invalid selector.');
     return null;
   }
