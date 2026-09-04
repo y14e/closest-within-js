@@ -29,19 +29,11 @@ export function closestWithin(
     scope = document.documentElement;
   }
 
-  let hasError = false;
-
-  if (typeof selector !== 'string' || !selector.trim()) {
-    hasError = true;
-  } else {
-    try {
-      scope.querySelector(selector);
-    } catch {
-      hasError = true;
-    }
-  }
-
-  if (hasError) {
+  if (
+    typeof selector !== 'string' ||
+    !selector.trim() ||
+    !scope.querySelector(selector)
+  ) {
     console.warn('Invalid selector.');
     return null;
   }
